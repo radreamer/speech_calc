@@ -48,6 +48,7 @@ window.onload = function(){
             case '/':
             case 'divide':
             case 'поделить':
+            case 'делить':
             case 'разделить':
             case 'поділити':
             case 'розділити':
