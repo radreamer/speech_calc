@@ -9,17 +9,19 @@
   </head>
   <body>
     <header>
-      <h1>Speech Calculator</h1>
-      <h2>The fastest way to know sum of numbers</h2>
+      <h1>Голосовой калькулятор</h1>
+      <h2>Самый быстрый способ узнать результат арифметических операций</h2>
     </header>
 
     <main>
       <div class="buttons-wrapper">
         <button id="play" class="button fa fa-circle"></button>
-        <!-- <button id="stop" class="button fa fa-stop"></button> -->
       </div>
 
-      <p>Your result is: <span id="result"></span></p>
+      <p class="unsupported-msg hidden">
+        Ваш браузер не поддерживает распознавание речи. Попробуйте <a href="https://www.google.ru/chrome/browser/desktop/">Google Chrome</a>.
+      </p>
+      <p class="hidden">Ваш результат: <span id="result"></span></p>
     </main>
     
     <script src="script.js"></script>
