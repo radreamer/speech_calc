@@ -1,3 +1,7 @@
+*:active {
+  outline: none;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -18,11 +22,16 @@ h1, h2, .buttons-wrapper {
   border-radius: 50%;
   background: transparent;
   border: none;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   width: 75px;
   height: 75px;
   font-size: 24px;
-  padding-left: 13px;
+  cursor: pointer;
+  color: #ea1f1f;
+}
+
+.button:active {
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .hidden {
