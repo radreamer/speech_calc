@@ -22,6 +22,7 @@ h1, h2, .buttons-wrapper {
   width: 75px;
   height: 75px;
   font-size: 24px;
+  padding-left: 13px;
 }
 
 .hidden {

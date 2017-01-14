@@ -15,9 +15,31 @@ if (window.SpeechRecognition === null) {
 
   // Start recognising
   recognizer.onresult = function(event) {
-    var resStr = event.results[0][0].transcript;
-    resStr.split(' ');
+    var resStr = event.results[0][0].transcript,
+        result = 0,
+        action;
 
+    resStr.split(' ').forEach(function(word){
+      if (isNaN(parseInt(word))) {
+        switch(action) {
+                case undefined:
+                case 'sum':
+            result += parseInt(word);
+            break;
+          case 'substraction':
+            result -= parseInt(word);
+            break;
+          default:
+            break;
+        }
+      } else {
+          if (word === '+' || word === 'плюс' || word === 'plus') {
+            action = 'sum';
+          } else if (word === '-' || word === 'минус' || word === 'minus') {
+        action = 'substraction';
+          }
+      }
+    });
   };
 
   // Listen for errors
