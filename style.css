@@ -1,4 +1,4 @@
-*:active {
+*:focus {
   outline: none;
 }
 
@@ -15,7 +15,7 @@ body {
   font-size: 14px;
 }
 
-h1, h2, main {
+header, main {
   text-align: center;
 }
 
