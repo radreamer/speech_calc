@@ -20,10 +20,10 @@ if (window.SpeechRecognition === null) {
         action;
 
     resStr.split(' ').forEach(function(word){
-      if (isNaN(parseInt(word))) {
+      if (!isNaN(parseInt(word))) {
         switch(action) {
-                case undefined:
-                case 'sum':
+          case undefined:
+          case 'sum':
             result += parseInt(word);
             break;
           case 'substraction':
