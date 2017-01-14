@@ -1,3 +1,4 @@
+var resultEl = document.getElementById('result');
 window.SpeechRecognition = window.SpeechRecognition       ||
                            window.webkitSpeechRecognition ||
                            null;
@@ -40,6 +41,8 @@ if (window.SpeechRecognition === null) {
           }
       }
     });
+
+    resultEl.textContent = result;
   };
 
   // Listen for errors
