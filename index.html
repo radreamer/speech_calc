@@ -3,27 +3,34 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Speech Calculator</title>
+    <title>Voice Calculator</title>
+    <link href="css/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <header>
-      <h1>Голосовой калькулятор</h1>
-      <h2>Самый быстрый способ узнать результат арифметических операций</h2>
-      <h3>Нажмите на кнопку и продиктуйте свой пример</h3>
-    </header>
+    <div class="modal-bg hidden">
+      <div class="modal-content">
+        <h3>Голосовой калькулятор</h3>
+        <p>Чтобы произвести вычисление, нажмите на кнопку записи и продиктуйте своё выражение. Вы можете использовать сложение, вычитание, умножение и деление.</p>
+        <p>Например: <i>"десять умножить на тридцать минус пятьдесят поделить на пять"</i>.</p>
+        <p>Результат тут же появится на экране.</p>
+        <i id="modal-close" class="fa fa-times" aria-hidden="true"></i>
+      </div>
+    </div>
 
     <main>
-      <div class="buttons-wrapper">
-        <button id="play" class="button fa fa-circle"></button>
-      </div>
+      <button id="play" class="btn bg-btn fa fa-circle"></button>
 
       <p class="unsupported-msg hidden">
-        Ваш браузер не поддерживает распознавание речи. Попробуйте <a href="https://www.google.ru/chrome/browser/desktop/">Google Chrome</a>.
+        К сожалению, Ваш браузер не поддерживает распознавание речи. Попробуйте <a href="https://www.google.ru/chrome/browser/desktop/">Google Chrome</a>.
       </p>
       <p class="hidden">Ваш результат: <span id="result"></span></p>
     </main>
+
+    <footer>
+      <button id="hint" class="btn sm-btn fa fa-question"></button>
+    </footer>
     
     <script src="script.js"></script>
   </body>
