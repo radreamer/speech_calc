@@ -26,6 +26,7 @@ window.onload = function(){
           switch(word) {
             case '+':
             case 'plus':
+            case 'add':
             case 'плюс':
             case 'прибавить':
             case 'сложить':
