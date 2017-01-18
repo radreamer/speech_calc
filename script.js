@@ -72,19 +72,19 @@ window.onload = function(){
     document.getElementById('play').addEventListener('click', function() {
       recognizer.start();
     });
-
-    document.getElementById('hint').addEventListener('click', function() {
-      document.querySelector('.modal-bg').classList.toggle('hidden');
-    });
-    
-    document.getElementById('modal-close').addEventListener('click', function() {
-      document.querySelector('.modal-bg').classList.add('hidden');
-    });
-
-    window.addEventListener('keydown', function(e) {
-      if (e.keyCode === 27) {
-        document.querySelector('.modal-bg').classList.add('hidden');
-      }
-    });
   }
+
+  document.getElementById('hint').addEventListener('click', function() {
+    document.querySelector('.modal-bg').classList.toggle('hidden');
+  });
+  
+  document.getElementById('modal-close').addEventListener('click', function() {
+    document.querySelector('.modal-bg').classList.add('hidden');
+  });
+
+  window.addEventListener('keydown', function(e) {
+    if (e.keyCode === 27) {
+      document.querySelector('.modal-bg').classList.add('hidden');
+    }
+  });
 };
