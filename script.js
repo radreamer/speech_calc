@@ -1,10 +1,8 @@
 window.onload = function(){
-  window.SpeechRecognition = window.SpeechRecognition       ||
-                            window.webkitSpeechRecognition ||
-                            null;
+  window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition || null;
 
   if (window.SpeechRecognition === null) {
-    document.getElementById('unsupported-msg').classList.remove('hidden');
+    document.querySelector('.unsupported-msg').classList.remove('hidden');
     document.getElementById('play').classList.add('hidden');
   } else {
     var recognizer = new window.SpeechRecognition();
