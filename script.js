@@ -145,6 +145,7 @@ window.onload = function(){
       return;
     }
     language = e.target.dataset.lang;
+    recognizer.lang = language;
     translateData();
     modalBg.classList.add('hidden');
   }
