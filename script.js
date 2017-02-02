@@ -40,7 +40,7 @@ window.onload = function(){
     }
   };
 
-  let language = navigator.language,
+  var language = navigator.language,
       resEl = document.getElementById('result'),
       errMsg = document.getElementById('error');
 
@@ -63,15 +63,14 @@ window.onload = function(){
   } else {
     var recognizer = new window.SpeechRecognition();
 
-    // Recogniser stop listening even if the user pauses
+    // Recogniser stop listening if the user pauses
     recognizer.continuous = false;
-    // @TODO: navigator.language
-    recognizer.lang = 'ru-RU';
+    recognizer.lang = language;
 
     // Start recognising
     recognizer.onresult = function(event) {
       const resStr = event.results[0][0].transcript;
-      let resultArr = [],
+      var resultArr = [],
           result;
 
       resStr.split(' ').forEach(function(word){
