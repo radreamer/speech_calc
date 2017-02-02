@@ -20,8 +20,34 @@
 #play
   color: #ea1f1f
 
-#hint
+#play.pulse:before
+  animation: pulse 1.3s infinite
+
+@keyframes pulse
+  0%
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+
+#hint, #change-lang
   color: #afaeae
-  margin-right: 10px
+  margin: 0 10px
   &:hover
     color: #909090
+
+.lang-btn
+  display: block
+  width: 300px
+  font-size: 24px
+  cursor: pointer
+  padding: 10px
+  margin-bottom: 15px
+  background: transparent
+  border: 1px solid #cecece
+  border-radius: 5px
+  &:hover
+    background: #f1f1f1
+  &:focus
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3)

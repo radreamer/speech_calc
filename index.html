@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Голосовой калькулятор. Voice Calculator." />
-    <meta name="keywords" content="голосовой калькулятор, калькулятор, voice calculator, calculator" />
+    <meta name="description" content="Голосовой калькулятор онлайн. Voice Calculator Online." />
+    <meta name="keywords" content="голосовий калькулятор, порахувати голосом, калькулятор безкоштовно, швидкий калькулятор, голосовой калькулятор, калькулятор онлайн, калькулятор, voice calculator, online calculator, calculator free, calculator, speech calculation, calculate by voice, fast calculation" />
     <meta name="robots" content="index,follow" />
     <title>Голосовой калькулятор</title>
     <link href="css/favicon.ico" rel="icon" type="image/x-icon" />
@@ -13,12 +13,8 @@
   </head>
   <body>
     <div class="modal-bg hidden">
-      <div class="modal-content">
-        <h3>Голосовой калькулятор</h3>
-        <p>Чтобы произвести вычисление, нажмите на кнопку записи и продиктуйте своё выражение. Вы можете использовать сложение, вычитание, умножение и деление.</p>
-        <p>Например: <i>"десять умножить на тридцать минус пятьдесят поделить на пять"</i>.</p>
-        <p>Результат тут же появится на экране.</p>
-        <p>Для работы голосового калькулятора, во всплывающем окне разрешите браузеру использование микрофона.</p>
+      <div class="modal">
+        <div class="modal-content"></div>
         <i id="modal-close" class="fa fa-times" aria-hidden="true"></i>
       </div>
     </div>
@@ -27,12 +23,14 @@
       <button id="play" class="btn bg-btn fa fa-circle"></button>
 
       <p class="unsupported-msg hidden">
-        К сожалению, Ваш браузер не поддерживает распознавание речи. Попробуйте <a href="https://www.google.ru/chrome/browser/desktop/">Google Chrome</a>.
+        <span class='tlt-unsupported'></span><a href="https://www.google.ru/chrome/browser/desktop/">Google Chrome</a>.
       </p>
-      <p class="hidden">Ваш результат: <span id="result"></span></p>
+      <p class="hidden"><span class='tlt-result'></span><span id="result"></span></p>
+      <p id="error" class="hidden">Мы ничего не расслышали, попробуйте еще раз</p>
     </main>
 
     <footer>
+      <button id="change-lang" class="btn sm-btn fa fa-globe"></button>
       <button id="hint" class="btn sm-btn fa fa-question"></button>
     </footer>
     
