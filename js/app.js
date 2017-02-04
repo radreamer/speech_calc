@@ -69,8 +69,8 @@ window.onload = function(){
 
     // Start recognising
     recognizer.onresult = function(event) {
-      const resStr = event.results[0][0].transcript;
-      var resultArr = [],
+      var resStr = event.results[0][0].transcript,
+          resultArr = [],
           result;
 
       resStr.split(' ').forEach(function(word){
@@ -117,7 +117,7 @@ window.onload = function(){
         }
       });
       result = eval(resultArr.join(''));
-      if (!result || !isFinite(result)) {
+      if (result === undefined || isNaN(result) || !isFinite(result)) {
         errMsg.classList.remove('hidden');
       } else {
         resEl.textContent = result;
@@ -126,7 +126,6 @@ window.onload = function(){
       playBtn.classList.remove('pulse');
     };
 
-    // Listen for errors
     recognizer.onerror = function(event) {
       console.error(event.message);
       playBtn.classList.remove('pulse');
@@ -161,8 +160,8 @@ window.onload = function(){
     modalContent.innerHTML =
       translates[language].langTitle +
       '<button data-lang="en-US" class="lang-btn">English</button>' +
-      '<button data-lang="ru-RU" class="lang-btn">Русский</button>' +
-      '<button data-lang="ua-UA" class="lang-btn">Українська</button>';
+      '<button data-lang="ru-RU" class="lang-btn">Русский</button>'/* +
+      '<button data-lang="ua-UA" class="lang-btn">Українська</button>'*/;
     modalBg.classList.toggle('hidden');
     modalContent.addEventListener('click', changeLanguage);
   });

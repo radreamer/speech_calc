@@ -4,7 +4,7 @@
   "description": "Do calculations with just your voice.",
   "scripts": {
     "sass": "sass css/style.sass css/style.css --sourcemap=none --style compressed",
-    "min": "node_modules/uglify-js/bin/uglifyjs script.js -c -m -o script.min.js"
+    "min": "node_modules/uglify-js/bin/uglifyjs js/app.js -c -m -o js/app.min.js"
   },
   "repository": {
     "type": "git",
