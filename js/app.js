@@ -25,18 +25,6 @@ window.onload = function(){
       unsuppotted: 'Unfortunately, your browser does not support speech recognition. Try',
       result: 'Your result:',
       error: 'We did not hear anything, please, try again'
-    },
-    'ua-UA': {
-      title: 'Голосовий калькулятор',
-      hint:
-        '<p>Для того, щоб провести розрахунки, натисіть на кнопку запису та продиктуйте свій вираз. Ви можете використовувати додавання, віднімання, множення і ділення.</p>' +
-        '<p>Наприклад: <i>"десять помножити на тридцять мінус п`ятдесят поділити на п`ять"</i>.</p>' +
-        '<p>Результат миттєво з`виться на екрані.</p>' +
-        '<p>Для роботи голосового калькулятора, у випливаючому вікні дозвольте браузеру використовувати мікрофон.</p>',
-      langTitle: '<h3>Оберіть мову:</h3>',
-      unsuppotted: 'Нажаль, Ваш браузер не підтримує розпізнавання мови. Спробуйте',
-      result: 'Ваш результат:',
-      error: 'Ми нічого не розчули, будь ласка, спробуйте ще раз'
     }
   };
 
@@ -84,7 +72,6 @@ window.onload = function(){
             case 'плюс':
             case 'прибавить':
             case 'сложить':
-            case 'додати':
               resultArr.push('+');
               break;
             case '-':
@@ -92,14 +79,11 @@ window.onload = function(){
             case 'минус':
             case 'отнять':
             case 'вычесть':
-            case 'мінус':
-            case 'відняти':
               resultArr.push('-');
               break;
             case '*':
             case 'multiply':
             case 'умножить':
-            case 'помножити':
               resultArr.push('*');
               break;
             case '/':
@@ -107,8 +91,6 @@ window.onload = function(){
             case 'поделить':
             case 'делить':
             case 'разделить':
-            case 'поділити':
-            case 'розділити':
               resultArr.push('/');
               break;
             default:
@@ -160,8 +142,7 @@ window.onload = function(){
     modalContent.innerHTML =
       translates[language].langTitle +
       '<button data-lang="en-US" class="lang-btn">English</button>' +
-      '<button data-lang="ru-RU" class="lang-btn">Русский</button>'/* +
-      '<button data-lang="ua-UA" class="lang-btn">Українська</button>'*/;
+      '<button data-lang="ru-RU" class="lang-btn">Русский</button>';
     modalBg.classList.toggle('hidden');
     modalContent.addEventListener('click', changeLanguage);
   });
